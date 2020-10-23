@@ -17,7 +17,23 @@ ROUTER.get('/api/users', async (req,res) => {
 
 // Get one user
 
+ROUTER.get('/api/users/:userID', async (req,res) => {
+	const { userID } = req.params;
+	const user = await pool.query("SELECT * FROM Users WHERE userID = ?", [userID]);
+	res.json(user);
+});
+
 // Create user
+ROUTER.post('/api/users', async (req,res) => {
+	try {
+		// Password should be encypted before inserting user
+		await pool.query('INSERT INTO Users SET ?', [req.body]);
+        res.json({status: '200'});
+	} catch(err){
+		console.log(err);
+		res.json({status: '400'});
+	}
+});
 
 // Update user
 
