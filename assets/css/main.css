@@ -1,0 +1,117 @@
+body {
+    background: linear-gradient(to right, #232526,#414345);
+    color: #fff;
+}
+  
+.dropZone {
+    min-height: 100px;
+    width: 100%;
+}
+
+.dropZone[drop-active=true] {
+    background: rgba(255, 255, 255,0.2);
+}
+
+.navbar-light .navbar-brand {
+    color: #fff;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
+    color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-toggler {
+    background: #fff;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* .navbar-nav {
+    text-align: center;
+} */
+
+.nav-link {
+    padding: .2rem 1rem;
+}
+
+.nav-link.active,.nav-link:focus{
+    color: #fff;
+}
+
+.navbar-toggler {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 0.3;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+.pulse {
+    overflow: visible;
+    position: relative;
+}
+.pulse:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: inherit;
+    border-radius: inherit;
+    transition: opacity .3s, transform .3s;
+    animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+    z-index: -1;
+}
+@keyframes pulse-animation {
+0% {
+    opacity: 1;
+    transform: scale(1);
+}
+50% {
+    opacity: 0;
+    transform: scale(2);
+}
+100% {
+    opacity: 0;
+    transform: scale(2);
+}
+}
+
+.accordion-button::after {
+    display: none;
+}
+
+.accordion-body {
+    word-wrap: break-word;
+}
+
+.check-handler {
+    display: none;
+}
+
+@media screen and (max-width: 480px){
+    .check-handler {
+        display: inline-block;
+    }
+}
